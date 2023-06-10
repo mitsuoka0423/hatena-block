@@ -7,27 +7,33 @@
   <meta name="viewport" content="width=device-width">
 </head>
 
-<body>
+<body style="height: 100vh; background-color: black;">
+  <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+    <img src="./img/hatena-block.jpg" style="width: auto; height: 50%;"></img>
+  </div>
 
-  <h2>向き[deg]</h2>
-  <p>a: <span id="ori-a"></span></p>
-  <p>b: <span id="ori-b"></span></p>
-  <p>g: <span id="ori-g"></span></p>
-
-  <h2>加速度(重力加速度のぞく)[m/s^2]</h2>
-  <p>x: <span id="acc-x"></span></p>
-  <p>y: <span id="acc-y"></span></p>
-  <p>z: <span id="acc-z"></span></p>
-
-  <h2>加速度(重力加速度ふくむ)[m/s^2]</h2>
-  <p>x: <span id="accG-x"></span></p>
-  <p>y: <span id="accG-y"></span></p>
-  <p>z: <span id="accG-z"></span></p>
-
-  <h2>角速度[deg/s]</h2>
-  <p>a: <span id="rot-a"></span></p>
-  <p>b: <span id="rot-b"></span></p>
-  <p>g: <span id="rot-g"></span></p>
+  <div style="display: none;">
+    <h2>向き[deg]</h2>
+    <p>a: <span id="ori-a"></span></p>
+    <p>b: <span id="ori-b"></span></p>
+    <p>g: <span id="ori-g"></span></p>
+  
+    <h2>加速度(重力加速度のぞく)[m/s^2]</h2>
+    <p>x: <span id="acc-x"></span></p>
+    <p>y: <span id="acc-y"></span></p>
+    <p>z: <span id="acc-z"></span></p>
+  
+    <h2>加速度(重力加速度ふくむ)[m/s^2]</h2>
+    <p>x: <span id="accG-x"></span></p>
+    <p>y: <span id="accG-y"></span></p>
+    <p>z: <span id="accG-z"></span></p>
+  
+    <h2>角速度[deg/s]</h2>
+    <p>a: <span id="rot-a"></span></p>
+    <p>b: <span id="rot-b"></span></p>
+    <p>g: <span id="rot-g"></span></p>
+  </div>
+  
 
   <script>
     window.addEventListener("deviceorientation", function (e) {
