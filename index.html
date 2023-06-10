@@ -9,7 +9,12 @@
 
 <body style="height: 100vh; background-color: black;">
   <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-    <img src="./img/hatena-block.jpg" style="width: auto; height: 50%;"></img>
+    <img src="./img/hatena-block.jpg" id="hatena" style="width: auto; height: 50%; border-radius: 32px;"></img>
+    <img src="./img/block.png" id="block" style="width: auto; height: 50%; border-radius: 32px; display: none;"></img>
+  </div>
+  <div>
+    <button id="2block">to block</button>
+    <button id="2hatena">to hatena</button>
   </div>
 
   <div style="display: none;">
@@ -36,6 +41,12 @@
   
 
   <script>
+    let maxPower = 0;
+
+    const power = (x, y, z) => {
+      return Math.sqrt(x * x + y * y + z * z);
+    };
+
     window.addEventListener("deviceorientation", function (e) {
       document.getElementById("ori-a").innerHTML = e.alpha.toFixed(3);
       document.getElementById("ori-b").innerHTML = e.beta.toFixed(3);
@@ -55,6 +66,26 @@
       document.getElementById("rot-a").innerHTML = rot.alpha.toFixed(3);
       document.getElementById("rot-b").innerHTML = rot.beta.toFixed(3);
       document.getElementById("rot-g").innerHTML = rot.gamma.toFixed(3);
+
+      const p = power(rot.alpha, rot.beta, rot.gamma);
+      if (p > maxPower) {
+        maxPower = p;
+        console.log(maxPower);
+      }
+    });
+  </script>
+  <script>
+    const hatena = document.getElementById("hatena");
+    const block = document.getElementById("block");
+    const start = document.getElementById("2block");
+    start.addEventListener("click", function () {
+      hatena.style.display = "none";
+      block.style.display = "block";
+    });
+    const toHatena = document.getElementById("2hatena");
+    toHatena.addEventListener("click", function () {
+      hatena.style.display = "block";
+      block.style.display = "none";
     });
   </script>
 </body>
