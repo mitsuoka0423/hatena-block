@@ -47,12 +47,12 @@
       return Math.sqrt(x * x + y * y + z * z);
     };
 
-    const showHatenaBlock = () => {
+    const showBlock = () => {
       document.getElementById("hatena").style.display = "none";
       document.getElementById("block").style.display = "block";
     };
 
-    const showBlock = () => {
+    const showHatenaBlock = () => {
       document.getElementById("hatena").style.display = "block";
       document.getElementById("block").style.display = "none";
     };
@@ -81,6 +81,10 @@
       if (p > maxPower) {
         maxPower = p;
         console.log(maxPower);
+      }
+
+      if (p > 20) {
+        console.log(p);
       }
 
       if (p > 30) {
